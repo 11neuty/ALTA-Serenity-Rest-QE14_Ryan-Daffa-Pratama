@@ -3,6 +3,7 @@ package starter.stepdef;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.java.eo.Se;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
 import starter.reqres.ReqresAPI;
@@ -18,7 +19,7 @@ public class ReqresStepDef {
 
     @Given("Get list user with parameter page {int}")
     public void getListUserWithParameterPage(int page) {
-        reqresAPI.getListUsers(2);
+        reqresAPI.getListUsers(page);
     }
 
     @When("Send request get list users")
@@ -46,5 +47,27 @@ public class ReqresStepDef {
     public void sendRequestCreateNewUser() {
         SerenityRest.when()
                 .post(ReqresAPI.CREATE_USERS);
+    }
+
+    @Given("Update user with valid json {string} and user id {int}")
+    public void updateUserWithValidJsonAndUserId(String json, int id) {
+        File jsonFile = new File(Constants.REQ_BODY+json);
+        reqresAPI.putUpdateUsers(id, jsonFile);
+    }
+
+    @When("Send request update user")
+    public void sendRequestUpdateUser() {
+        SerenityRest.when().put(ReqresAPI.UPDATE_USERS);
+    }
+
+    @Given("Delete user with user id {int}")
+    public void deleteUserWithUserId(int id) {
+        reqresAPI.deleteUser(id);
+
+    }
+
+    @When("Send request delete user")
+    public void sendRequestDeleteUser() {
+        SerenityRest.when().delete(ReqresAPI.DELETE_USERS);
     }
 }
