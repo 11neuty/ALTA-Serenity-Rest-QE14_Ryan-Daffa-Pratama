@@ -19,4 +19,5 @@ Feature: Get list user
   Scenario: Get list user with invalid parameter page
     Given Get data user with invalid parameter page -1
     When  Send request get list users
-    Then  Status code should be 200
+    Then  Status code should be 400
+

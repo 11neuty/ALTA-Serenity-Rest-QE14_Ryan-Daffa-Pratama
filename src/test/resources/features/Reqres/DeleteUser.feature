@@ -13,13 +13,13 @@ Feature: Delete User
 
   @Tugas
   #Negative Test Case
-  Scenario Outline: Delete user with invalid user id
+  Scenario Outline: Delete user with unregistered user id
     Given Delete user with user id <id>
     When Send request delete user
     Then Status code should be <statusCode>
     Examples:
       | id | statusCode |
-      | 95 | 204        |
-      | 99 | 204        |
+      | 95 | 404        |
+      | 99 | 404        |
 
 
