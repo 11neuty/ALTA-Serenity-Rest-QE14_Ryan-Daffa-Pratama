@@ -1,12 +1,18 @@
-Feature: Positive and Negative test case get list method
+Feature: Get list user
   As user i can check the method 'get' to search list user
+
   @Tugas
-  Scenario: Get list user with valid parameter page
-    Given Get data user with valid parameter page 1
-    When Send request get list users
-    Then Status code should be 200
-    And  Response body data should be 1
-    And  Validate json schema "GetListUser.json"
+  Scenario Outline: Get list user with valid parameter page
+    Given Get data user with valid parameter page <page>
+    When  Send request get list users
+    Then  Status code should be <statusCode>
+    And   Response body data page should be <page>
+    And   Validate json schema <json>
+    Examples:
+      | page | statusCode | json               |
+      | 1    | 200        | "GetListUser.json" |
+      | 2    | 200        | "GetListUser.json" |
+      | 3    | 200        | "GetListUser.json" |
 
 
   @Tugas

@@ -1,4 +1,4 @@
-Feature: Positive and Negative test case get single method
+Feature: Get single user
   As user i can check the method 'get' to search single user
 @Tugas
 #  Positive test case

@@ -3,12 +3,15 @@ package starter.stepdef;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.java.en_scouse.An;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
 import starter.reqres.ReqresAPI;
+import starter.reqres.ReqresResponses;
 import starter.utils.Constants;
 
 import java.io.File;
+import static org.hamcrest.Matchers.equalTo;
 
 public class UpdateUserStepDef {
     @Steps
@@ -21,6 +24,11 @@ public class UpdateUserStepDef {
     @When("Send request update user")
     public void sendRequestUpdateUser() {
         SerenityRest.when().put(ReqresAPI.UPDATE_USERS);
+    }
+
+    @An("Response body name should be {string}")
+    public void responseBodyNameShouldBe(String name){
+        SerenityRest.and().body(ReqresResponses.NAME,equalTo(name));
     }
 
 

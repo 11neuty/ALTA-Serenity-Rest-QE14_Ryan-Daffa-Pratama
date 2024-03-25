@@ -27,7 +27,7 @@ public class RegisterSingleUserStepDef {
         SerenityRest.when().post(ReqresAPI.REGISTER_USERS);
     }
 
-    @Given("User register reqress.in with invalid json {string}")
+    @Given("User register data user with invalid json {string}")
     public void userRegisterReqressInWithInvalidJson(String json) {
         File jsonFile = new File(Constants.REQ_BODY+json);
         reqresAPI.registerSingleUser(jsonFile);

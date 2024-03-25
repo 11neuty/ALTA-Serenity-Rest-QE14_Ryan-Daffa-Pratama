@@ -16,14 +16,13 @@ public class LoginStepDef {
     ReqresAPI reqresAPI;
 
     @Given("User login with valid json {string}")
-    public void userLoginWithValidAnd(String json) {
+    public void userLoginWithValidJson(String json){
         File jsonFile = new File(Constants.REQ_BODY+json);
         reqresAPI.LoginEmailPassword(jsonFile);
     }
-
     @When("User send request to login")
     public void userSendRequestToLogin() {
-        SerenityRest.when().post(reqresAPI.LOGIN_USERS);
+        SerenityRest.when().post(ReqresAPI.LOGIN_USERS);
     }
 
     @Given("User login with invalid json {string}")
@@ -31,4 +30,7 @@ public class LoginStepDef {
         File jsonFile = new File(Constants.REQ_BODY+json);
         reqresAPI.LoginEmailPassword(jsonFile);
     }
+
+
+
 }
