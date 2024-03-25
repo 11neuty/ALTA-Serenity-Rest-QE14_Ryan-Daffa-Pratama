@@ -1,5 +1,5 @@
 Feature: Register user
-  As user i can register with valid email and password
+  As user i can register with valid email and password and cant register user with invalid email
   @Tugas
   #Positive Test Case
   Scenario Outline: Post register with valid json

@@ -1,5 +1,5 @@
 Feature: Get list user
-  As user i can check the method 'get' to search list user
+  As user i can get list user with valid parameter page and cant get list with invalid parameter page
 
   @Tugas
   Scenario Outline: Get list user with valid parameter page
@@ -17,6 +17,6 @@ Feature: Get list user
 
   @Tugas
   Scenario: Get list user with invalid parameter page
-    Given Get data user with invalid parameter page 55
+    Given Get data user with invalid parameter page -1
     When  Send request get list users
     Then  Status code should be 200

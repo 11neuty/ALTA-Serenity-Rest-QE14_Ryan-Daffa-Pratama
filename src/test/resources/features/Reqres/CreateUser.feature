@@ -1,5 +1,5 @@
 Feature: Create User
-  As user i can check method 'post' to create single user
+  As user i can create user with valid json and cant create user with invalid json
 
   @Tugas
   Scenario Outline: Post create single user with valid json

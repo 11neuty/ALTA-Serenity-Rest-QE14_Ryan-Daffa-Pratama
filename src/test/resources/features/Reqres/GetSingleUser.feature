@@ -1,5 +1,5 @@
 Feature: Get single user
-  As user i can check the method 'get' to search single user
+  As user i can get single user with valid parameter id and cant get single user with invalid parameter id
 @Tugas
 #  Positive test case
  Scenario: Get single user with valid parameter id

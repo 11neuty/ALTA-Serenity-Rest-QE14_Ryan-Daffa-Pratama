@@ -1,5 +1,5 @@
 Feature: Update user
-  As user i can check method 'put' to update data
+  As user i can update user with calid json and user id and cant update user with invalid json
 
   @Tugas
   Scenario Outline: Update user with valid json and user id

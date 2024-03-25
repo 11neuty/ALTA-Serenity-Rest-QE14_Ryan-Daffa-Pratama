@@ -1,5 +1,5 @@
 Feature: Delete User
-  As user i can check method 'delete' to delete data
+  As user i can delete user with valid user id
   @Tugas
   #Positive Test Case
   Scenario Outline: Delete user with valid user id
